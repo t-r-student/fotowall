@@ -1,0 +1,14 @@
+/CODE_OF_CONDUCT.md
+/CONTRIBUTING.md
+/global-groovy.log
+/LICENSE
+/setupTests.js
+/soapui.log
+/soapui-errors.log
+/renovate.json
+/PULL_REQUEST_TEMPLATE.md
+node_modules/
+/node_modules/
+/node_modules/*
+
+
