@@ -3,6 +3,7 @@ import Title from './Title';
 import Photowall from './Photowall';
 
 
+
 class Main extends React.Component{
     constructor(){
         super()
@@ -18,13 +19,23 @@ class Main extends React.Component{
                 imageLink: "http://media.ussportscamps.com/media/images/basketball/nike/_400x400_crop_top-center_75/nike_thumbnail_400x400_1.jpg"
             }]
         }
+        this.removePhoto = this.removePhoto.bind(this);
     }
+
+
+    removePhoto(postRemoved){
+        console.log(postRemoved.description)
+        this.setState((prevState)=> ({
+            posts: prevState.posts.filter(post => post !== postRemoved)
+        }))
+    }
+
     render(){
         return <div>
             <Title title = {'Fotowall'}/>
                 <div className="photoGrid">
                     <div className="row">
-                        <Photowall posts={this.state.posts}/>
+                        <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto}/>
                     </div>
                 </div>
             </div>
