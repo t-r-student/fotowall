@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './components/Main';
-
-const tasks = ['get rid off the trash', 'walk the dog'];
-
-
+import  './styles/stylesheet.css';
 
 ReactDOM.render(<Main/>, document.getElementById('app'));
