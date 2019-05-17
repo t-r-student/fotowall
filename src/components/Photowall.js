@@ -8,9 +8,6 @@ const btnStyle = {
         display: "table",
         padding: "40px",
         fontSize: "20px"
-        // background: "url('https://image.flaticon.com/icons/svg/16/16909.svg')",
-        // backgroundSize: "contain",
-        // border: "none"
 }
 
 const photoGrid = {
@@ -32,7 +29,11 @@ function Photowall(props){
             </div>
             <div className="rwo">
                 <div className="col s12" style={photoGrid}>
-                    {props.posts.map(function(post, index){
+                    {props.posts
+                    .sort(function(x,y){
+                        return y.id - x.id
+                    })
+                    .map(function(post, index){
                         return <div className="col">
                                     <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto}/>
                                </div>

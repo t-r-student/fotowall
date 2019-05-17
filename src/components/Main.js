@@ -12,23 +12,24 @@ class Main extends React.Component{
         super()
         this.state= {
             posts : [{
-                id: "0",
+                id: 0,
                 description: "beautifull landscape",
                 imageLink: "http://costaszissis.com/wp-content/uploads/2015/06/nature_05-400x400.jpg"
             },
             {
-                id: "1",
+                id: 1,
                 description: "sport",
                 imageLink: "http://media.ussportscamps.com/media/images/basketball/nike/_400x400_crop_top-center_75/nike_thumbnail_400x400_1.jpg"
             }],
-            screen : 'photos'
         }
         this.removePhoto = this.removePhoto.bind(this);
-        console.log('constructor');
-        this.navigate = this.navigate.bind(this);
     }
 
-
+    addPhoto(postSubmited){
+        this.setState(state => ({
+            state : state.posts.concat([postSubmited])
+        }))
+    }
     
 
     removePhoto(postRemoved){
@@ -43,14 +44,8 @@ class Main extends React.Component{
         console.log(this.state);
     }
 
-    navigate(){
-        this.setState({
-            screen : 'addPhoto'
-        })    
-    }
-
     render(){
-        console.log('render');
+        console.log(this.state.posts)
         return <div>
                 <Route exact path='/' render={() => (
                     <div>
@@ -63,13 +58,14 @@ class Main extends React.Component{
                 </div>
                 )}/>
                     
-                {/* <Route path="/AddPhoto" render={() => (
-                    <div>
-                    <AddPhoto/>
-                </div>
-                )}        */}
+                {/* <Route path="/AddPhoto"render={() =>(<div><AddPhoto/></div> )}*/}
 
-                <Route path="/AddPhoto" component={AddPhoto}/>
+                <Route path="/AddPhoto" render = { ({history}) => (
+                    <AddPhoto onAddPhoto={(addedPost) => {
+                        this.addPhoto(addedPost)
+                        history.push('/')    
+                    }}/>
+                )} />
                     
             </div>
             
