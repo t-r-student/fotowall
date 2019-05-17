@@ -1,12 +1,13 @@
 import React from 'react';
 import Photo from './Photo';
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 const btnStyle = {
         margin: "20px auto",
         display: "table",
         padding: "40px",
-        fontSize: "32px"
+        fontSize: "20px"
         // background: "url('https://image.flaticon.com/icons/svg/16/16909.svg')",
         // backgroundSize: "contain",
         // border: "none"
@@ -22,15 +23,22 @@ const photoGrid = {
 function Photowall(props){
     return(
         <div>
-        <button className="btn btn-primary" style={btnStyle} type="submit" onClick={props.onNavigate} > + </button>
-
-        <div className="p" style={photoGrid}>
-            {props.posts.map(function(post, index){
-                return <div className="col">
-                    <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto}/>
-                    </div>
-            })}
-        </div>
+            <div className="rwo">
+                <div className="col s5"></div>
+                <div className="col s2">
+                    <Link style={btnStyle} to="/AddPhoto"> Click me  </Link>
+                </div>
+                <div className="col s5"></div>
+            </div>
+            <div className="rwo">
+                <div className="col s12" style={photoGrid}>
+                    {props.posts.map(function(post, index){
+                        return <div className="col">
+                                    <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto}/>
+                               </div>
+                    })}
+                </div>
+            </div>
         </div>
     )
 }

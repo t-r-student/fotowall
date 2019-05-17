@@ -2,6 +2,8 @@ import React from 'react';
 import Title from './Title';
 import Photowall from './Photowall';
 import AddPhoto from './AddPhoto';
+import { Route } from 'react-router-dom';
+
 
 
 
@@ -50,27 +52,25 @@ class Main extends React.Component{
     render(){
         console.log('render');
         return <div>
-            {
-                this.state.screen === 'photos' && (
+                <Route exact path='/' render={() => (
                     <div>
-                        <Title title = {'Fotowall'}/>
-                            <div className="photoGrid">
-                                <div className="row">
-                            <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate = {this.navigate} />
-                        </div>
+                    <Title title = {'Fotowall'}/>
+                        <div className="photoGrid">
+                            <div className="row">
+                        <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate = {this.navigate} />
                     </div>
-                    </div>
-
-                )
-            }
-
-            {
-                this.state.screen === 'addPhoto' && (
+                </div>
+                </div>
+                )}/>
+                    
+                {/* <Route path="/AddPhoto" render={() => (
                     <div>
-                        <AddPhoto/>
-                    </div>
-                )
-            }
+                    <AddPhoto/>
+                </div>
+                )}        */}
+
+                <Route path="/AddPhoto" component={AddPhoto}/>
+                    
             </div>
             
     }
