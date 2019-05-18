@@ -12,21 +12,21 @@ const figure = {
 
 function Photo(props){
     console.log(props)
-    const post = props.post;
+    const { post, removePost } = props;
     return(
          <figure style={figure}>
             <img className="photo" src={post.imageLink} alt={post.description}/>    
             <figcaption> <p> {post.description} </p> </figcaption>
-            <button onClick={()=> {
-                props.onRemovePhoto(post)
-            } }> remove </button>
+            <button onClick={function(){
+                return removePost(props.index)
+            } }> Remove </button>
         </figure>
     )
 }
 
+
 Photo.propTypes = {
     post : PropTypes.object.isRequired,
-    onRemovePhoto : PropTypes.func.isRequired
 }
 
 export default Photo;

@@ -18,26 +18,25 @@ const photoGrid = {
 }
 
 function Photowall(props){
+    console.log('props from Photowall', props);
     return(
         <div>
-            <div className="rwo">
+            <div className="row">
                 <div className="col s5"></div>
                 <div className="col s2">
                     <Link style={btnStyle} to="/AddPhoto"> Click me  </Link>
                 </div>
                 <div className="col s5"></div>
             </div>
-            <div className="rwo">
+            <div className="row">
                 <div className="col s12" style={photoGrid}>
                     {props.posts
-                    .sort(function(x,y){
-                        return y.id - x.id
-                    })
-                    .map(function(post, index){
-                        return <div className="col">
-                                    <Photo key={index} post={post} onRemovePhoto={props.onRemovePhoto}/>
-                               </div>
-                    })}
+                    // .sort(function(x,y){
+                    //     return y.id - x.id
+                    // })
+                    .map((post, index)=>
+                        <Photo key={index} post={post} {...props} index={index}/>
+                    )}
                 </div>
             </div>
         </div>
@@ -46,8 +45,6 @@ function Photowall(props){
 
 Photowall.propTypes = {
     posts : PropTypes.array.isRequired,
-    onRemovePhoto : PropTypes.func.isRequired
-
 }
 
 export default Photowall;

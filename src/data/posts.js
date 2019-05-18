@@ -8,6 +8,7 @@ const posts = [{
         id: 1,
         description: "sport",
         imageLink: "http://media.ussportscamps.com/media/images/basketball/nike/_400x400_crop_top-center_75/nike_thumbnail_400x400_1.jpg"
-    }]
+    }
+]
 
 export default posts;
