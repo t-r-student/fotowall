@@ -15,6 +15,7 @@ class Main extends React.Component{
 
     render(){
         console.log("props from Main", this.props);
+        
     return (
 
         <div>
@@ -34,9 +35,7 @@ class Main extends React.Component{
             {/* <Route path="/AddPhoto"render={() =>(<div><AddPhoto/></div> )} */}
 
              <Route path="/AddPhoto" render = { ({history}) => (
-                <AddPhoto onAddPhoto={(addedPost) => { 
-                    history.push('/')    
-                }}/>
+                <AddPhoto {...this.props} onHistory={history}/>
             )} />
                     
         </div>
