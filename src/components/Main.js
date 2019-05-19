@@ -2,7 +2,7 @@ import React from 'react';
 import Title from './Title';
 import Photowall from './Photowall';
 import { Route } from 'react-router-dom';
-import { removePost } from '../redux/actions';
+import AddPhoto from './AddPhoto';
 
 
 
@@ -31,13 +31,13 @@ class Main extends React.Component{
                 </div>
             )}/>
                 
-            {/* <Route path="/AddPhoto"render={() =>(<div><AddPhoto/></div> )}*/}
-            {/* <Route path="/AddPhoto" render = { ({history}) => (
-                <AddPhoto onAddPhoto={(addedPost) => {
-                    this.addPhoto(addedPost)
+            {/* <Route path="/AddPhoto"render={() =>(<div><AddPhoto/></div> )} */}
+
+             <Route path="/AddPhoto" render = { ({history}) => (
+                <AddPhoto onAddPhoto={(addedPost) => { 
                     history.push('/')    
                 }}/>
-            )} /> */}
+            )} />
                     
         </div>
         )
