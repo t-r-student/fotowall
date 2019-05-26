@@ -50,6 +50,7 @@
     "@hot-loader/react-dom": "^16.8.6",
     "babel-plugin-transform-react-pure-class-to-function": "1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
+    "firebase": "^6.0.4",
     "lodash": "4.17.11",
     "prop-types": "15.6.2",
     "react": "16.7.0",
@@ -57,7 +58,8 @@
     "react-hot-loader": "^4.6.3",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
