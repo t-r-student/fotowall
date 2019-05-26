@@ -37,9 +37,9 @@ class Main extends React.Component{
              <Route path="/AddPhoto" render = { (params) => ( //{params} as a property of an object
                 <AddPhoto {...this.props} onHistory={params.history}/>
             )} />
-            {/* <Route path="/single/:id" render={(params) => (
+            <Route path="/single/:id" render={(params) => (
                 <Single {...this.props} {...params} />
-            ) }/> */}
+            ) }/>
                     
         </div>
         )

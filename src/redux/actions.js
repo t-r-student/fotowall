@@ -32,7 +32,7 @@ export function addComment(comment, postId){ // ADD_COMMENT action
      return {
         type : "ADD_COMMENT_AND_LINK",
         comment : comment,
-        postId: postId
+        postId: postId  
     }
 }
 

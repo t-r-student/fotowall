@@ -16,6 +16,7 @@ function comments(state={}, action ){ // commentReducer
     // debugger;
     switch (action.type){
         case "ADD_COMMENT_AND_LINK" :
+            
             if (!state[action.postId]){
                 return {...state, [action.postId]: [action.comment]}
             } else {

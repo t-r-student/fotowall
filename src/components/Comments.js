@@ -8,20 +8,13 @@ class Comments extends React.Component{
     handleSubmit(event){
         event.preventDefault()
         const comment = event.target.elements.comment.value;
-        // const link = event.target.elements.link.value;
         this.props.addComment(comment, this.props.id); // here we are emitting an action
+        event.target.elements.comment.value='';
         
     }
 
     
     render(){
-        // for (var key in this.props.commentsAndLinks) {
-        //     const {comment, link} = this.props.commentsAndLinks.commentLink;   
-        //            return (<div>
-        //                 <p key={key}> Comment - {comment} Link -{link} </p>
-                        
-        //             </div>)
-        // }
         
         return(
            

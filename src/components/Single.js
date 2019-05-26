@@ -9,17 +9,12 @@ class Single extends React.Component{
         const id = Number(match.params.id);
         const post = posts.find((post)=> post.id === id);
         const comments = this.props.comments[match.params.id] || []; // data from the store
-        const index = this.props.posts.findIndex((post)=>post.id===id)
+        const index = this.props.posts.findIndex((post)=>post.id ===id)
     return(
         
         <div className="single-photo">
-            <Photo post={post}
-             {...this.props}
-             index={index}
-             />
-            <Comments
-            addComment={this.props.addComment} // action 
-            comments={comments} id={id}/> 
+            <Photo key={index} post={post} {...this.props}  />
+            <Comments addComment={this.props.addComment} comments={comments} id={id}/> 
         </div>
     )
  
