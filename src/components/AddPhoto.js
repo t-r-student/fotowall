@@ -20,7 +20,11 @@ const styles = {
     button : {
         width : "100%",
         border: "none",
-        textTransform: "uppercase"
+        background: "#065784",
+        padding: "15px",
+        color: "white",
+        fontSize: "14px",
+        cursor: "pointer"
     }
 
 }
@@ -48,10 +52,12 @@ class AddPhoto extends React.Component{
 
     render(){
         const {form : form, formInput : formInput, button : button} = styles;
+        
      return(
-       <div>
+       <div className="form">
            <h1>Photowall</h1>
          <form onSubmit={this.handleSubmit}>
+             
            <div className="row" style={form}>
               <div className="col" style={formInput}>
               
@@ -68,7 +74,7 @@ class AddPhoto extends React.Component{
               </div>
            </div>  
            <div className="row" style={form}>
-                <button className="btn btn-primary" style={button}> Post </button>
+                <button style={button}> Post </button>
            </div>
          </form>
        </div>    

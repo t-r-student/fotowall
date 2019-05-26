@@ -9,11 +9,33 @@ export function removePost(index){
 }
 
 export function addPost(post){
+    
     return {
         type : "ADD_POST",
         post : post // post - since the same name
     }
 }
 
+// export function addCommentLinkAction(comment, link, postId){ // ADD_COMMENT action
+//     // debugger;
+//      return {
+//         type : "ADD_COMMENT_AND_LINK",
+//         commentLink : {
+//             comment: comment,
+//             link: link
+//         },
+//         postId: postId
+//     }
+// }
+export function addComment(comment, postId){ // ADD_COMMENT action
+    // debugger;
+     return {
+        type : "ADD_COMMENT_AND_LINK",
+        comment : comment,
+        postId: postId
+    }
+}
+
 
 //adding post
+

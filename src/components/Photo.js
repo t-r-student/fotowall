@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
 const figure = {
     flexBasis: "calc(33.333% - 4rem)",
@@ -11,15 +12,20 @@ const figure = {
 }
 
 function Photo(props){
-    console.log(props)
     const { post, removePost } = props;
+    // debugger;
     return(
-         <figure style={figure}>
-            <img className="photo" src={post.imageLink} alt={post.description}/>    
+         <figure className="figure">
+             <Link to={`/single/${post.id}`} > <img className="photo" src={post.imageLink} alt={post.description}/> </Link>
+                
             <figcaption> <p> {post.description} </p> </figcaption>
-            <button onClick={function(){
-                return removePost(props.index)
-            } }> Remove </button>
+            <div className="button-container">
+                <button className="button-remove" onClick={()=> {
+                    removePost(props.index)
+                    props.history.push('/')
+                    
+                } }> Remove </button>
+            </div>
         </figure>
     )
 }

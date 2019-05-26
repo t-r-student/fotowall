@@ -18,7 +18,6 @@ const photoGrid = {
 }
 
 function Photowall(props){
-    console.log('props from Photowall', props);
     return(
         <div>
             <div className="row">
@@ -29,14 +28,13 @@ function Photowall(props){
                 <div className="col s5"></div>
             </div>
             <div className="row">
-                <div className="col s12" style={photoGrid}>
-                    {props.posts
-                    // .sort(function(x,y){
-                    //     return y.id - x.id
-                    // })
-                    .map((post, index)=>
-                        <Photo key={index} post={post} {...props} index={index}/>
-                    )}
+                <div className="col s12">
+                    <div className="photoGrid" style={photoGrid}>
+                        {props.posts
+                        .map((post, index)=>
+                            <Photo key={index} post={post} {...props} index={index}/>
+                        )}
+                    </div>    
                 </div>
             </div>
         </div>

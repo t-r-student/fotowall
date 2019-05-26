@@ -3,6 +3,8 @@ import Title from './Title';
 import Photowall from './Photowall';
 import { Route } from 'react-router-dom';
 import AddPhoto from './AddPhoto';
+import Single from './Single';
+import Comments from './Comments.js';
 
 
 
@@ -14,8 +16,6 @@ class Main extends React.Component{
     }
 
     render(){
-        console.log("props from Main", this.props);
-        
     return (
 
         <div>
@@ -34,9 +34,12 @@ class Main extends React.Component{
                 
             {/* <Route path="/AddPhoto"render={() =>(<div><AddPhoto/></div> )} */}
 
-             <Route path="/AddPhoto" render = { ({history}) => (
-                <AddPhoto {...this.props} onHistory={history}/>
+             <Route path="/AddPhoto" render = { (params) => ( //{params} as a property of an object
+                <AddPhoto {...this.props} onHistory={params.history}/>
             )} />
+            {/* <Route path="/single/:id" render={(params) => (
+                <Single {...this.props} {...params} />
+            ) }/> */}
                     
         </div>
         )

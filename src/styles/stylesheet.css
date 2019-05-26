@@ -1,5 +1,6 @@
 html{
-    font-size: 8px;
+    font-size: 10px;
+    font-family: 'sans-serif';
     
 
 }
@@ -10,6 +11,7 @@ h1{
     font-size: 13rem;
     font-weight: 100;
     margin: 2rem 0;
+    letter-spacing: -1px;
 
 }
 
@@ -19,14 +21,56 @@ h1{
     width: calc(100% + 4rem);
     margin: -2rem 0rem 0rem -2rem;
 }
+
 p{
-    font-size: 14px;
+    font-size: 1.6rem;
 }
 
 .btn {
     margin: 20px auto;
     display: table;
-    padding: 40px;
+    padding: 100px;
     
 }
 
+.photoGrid{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.figure{
+    flex-basis: calc(33.333% - 4rem);
+    border: 1px solid #d3d3d3;
+    padding: 2rem;
+    flex-grow: 1;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    flex-basis: 48%;
+    color: red;
+    font-size: 15px;
+    border: 2px solid #f2f2f2;
+    line-height: 2;
+    padding: 5px;
+}
+
+
+
+.form button{
+    font-family: 'sans-serif';
+    text-transform: uppercase;
+    background: #065784;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
