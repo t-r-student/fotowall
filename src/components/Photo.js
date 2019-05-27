@@ -10,13 +10,17 @@ const figure = {
     margin: "0 2rem 2rem 2rem",
     fontSize: "14px"
 }
+const foto = {
+    width : "400px",
+    height : "400px"
+}
 
 function Photo(props){
     const { post, removePost } = props;
     // debugger;
     return(
          <figure className="figure">
-             <Link to={`/single/${post.id}`} > <img className="photo" src={post.imageLink} alt={post.description}/> </Link>
+             <Link to={`/single/${post.id}`} > <img style={foto} className="photo" src={post.imageLink} alt={post.description}/> </Link>
                 
             <figcaption> <p> {post.description} </p> </figcaption>
             <div className="button-container">

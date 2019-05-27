@@ -5,8 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../redux/actions'; 
 import { withRouter } from 'react-router';
 
-//      Hi! I have an access to the STATE because or <Provider store={store}> 
-//          store = reducer
+//      Hi! I have an access to the STATE because of <Provider store={store}> 
+//          store = createStore(reducer)
 //                          reducer(state,action){
 //      by default reducer  return state
 //      }
