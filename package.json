@@ -50,7 +50,7 @@
     "@hot-loader/react-dom": "^16.8.6",
     "babel-plugin-transform-react-pure-class-to-function": "1.0.1",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "prop-types": "15.6.2",
     "react": "16.7.0",
     "react-dom": "16.7.0",
